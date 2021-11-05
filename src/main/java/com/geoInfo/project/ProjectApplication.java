@@ -1,6 +1,8 @@
 package com.geoInfo.project;
 
+import com.geoInfo.project.dao.AdminRepository;
 import com.geoInfo.project.dao.IntermediaireRepository;
+import com.geoInfo.project.model.Admin;
 import com.geoInfo.project.model.Intermediaire;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -19,6 +21,10 @@ public class ProjectApplication implements CommandLineRunner {
 
 	@Autowired
 	private IntermediaireRepository intermediaireRepository ;
+
+	@Autowired
+	private AdminRepository adminRepository ;
+
 	public static void main(String[] args) {
 		SpringApplication.run(ProjectApplication.class, args);
 	}
@@ -27,12 +33,18 @@ public class ProjectApplication implements CommandLineRunner {
 		intermediaireRepository.save(new Intermediaire(null,"user@gmail.com",
 				"user","ROLE_USER","aa","aa","","","","","","","","","ROLE_INTER"));
 		intermediaireRepository.save(new Intermediaire(null,"user2@gmail.com",
-				"user","ROLE_USER","bb","","","","","","","","","","inter"));
+				"user","ROLE_USER","bb","bb","","","","","","","","","ROLE_ADMIN"));
 		intermediaireRepository.save(new Intermediaire(null,"user3@gmail.com",
-				"user","ROLE_USER","cc","","","","","","","","","","user"));
+				"user","ROLE_USER","cc","cc","","","","","","","","","ROLE_USER"));
 		intermediaireRepository.save(new Intermediaire(null,"user4@gmail.com",
-				"user","ROLE_USER","dd","","","","","","","","","","user"));
+				"user","ROLE_USER","dd","dd","","","","","","","","","ROLE_USER"));
 		intermediaireRepository.findAll().forEach(System.out::println);
+
+		/*adminRepository.save(new Admin(null,"admin",
+				"admin","ROLE_ADMIN"));*/
+		adminRepository.save(new Admin(null , "admin","admin","ROLE_ADMIN"));
+
+
 
 
 

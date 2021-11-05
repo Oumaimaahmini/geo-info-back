@@ -12,7 +12,7 @@ import java.util.List;
 @Data @AllArgsConstructor @NoArgsConstructor @ToString
 @Entity
 
-public class Intermediaire {
+public class Intermediaire extends Admin{
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
