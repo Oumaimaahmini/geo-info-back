@@ -49,4 +49,6 @@ public class Intermediaire extends Admin{
 
     private String roles ;
 
+    private boolean isVerified = false ;
+
 }

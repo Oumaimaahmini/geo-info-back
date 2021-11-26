@@ -31,13 +31,13 @@ public class ProjectApplication implements CommandLineRunner {
 	public void run(String... args) throws Exception {
 
 		intermediaireRepository.save(new Intermediaire(null,"user@gmail.com",
-				"user","ROLE_USER","aa","aa","","","","","","","","","ROLE_INTER"));
+				"user","ROLE_USER","aa","aa","","","","","","","","","ROLE_INTER",false));
 		intermediaireRepository.save(new Intermediaire(null,"user2@gmail.com",
-				"user","ROLE_USER","bb","bb","","","","","","","","","ROLE_ADMIN"));
+				"user","ROLE_USER","bb","bb","","","","","","","","","ROLE_ADMIN",false));
 		intermediaireRepository.save(new Intermediaire(null,"user3@gmail.com",
-				"user","ROLE_USER","cc","cc","","","","","","","","","ROLE_USER"));
+				"user","ROLE_USER","cc","cc","","","","","","","","","ROLE_USER",false));
 		intermediaireRepository.save(new Intermediaire(null,"user4@gmail.com",
-				"user","ROLE_USER","dd","dd","","","","","","","","","ROLE_USER"));
+				"user","ROLE_USER","dd","dd","","","","","","","","","ROLE_USER",false));
 		intermediaireRepository.findAll().forEach(System.out::println);
 
 		/*adminRepository.save(new Admin(null,"admin",
