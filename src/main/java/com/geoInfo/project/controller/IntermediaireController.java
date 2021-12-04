@@ -123,9 +123,14 @@ public class IntermediaireController {
 		final String jwt = jwtTokenUtil.generateToken(userDetails);
 		return jwt ;
 
-		// return ResponseEntity.ok(new AuthenticationResponse(jwt));
 
 
+	}
+
+	@GetMapping("/hello")
+	public String hello() {
+		System.out.println("hello api");
+		return "Hello World";
 	}
 
 

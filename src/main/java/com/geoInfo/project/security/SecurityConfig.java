@@ -63,9 +63,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSecurity.csrf().disable()
                 .authorizeRequests().antMatchers("/authenticate").permitAll()
                 .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
-                .antMatchers("/intermediaires").hasRole("INTER")
-                .and().
-                exceptionHandling().authenticationEntryPoint(authenticationEntryPoint).and().sessionManagement()
+                .antMatchers("/intermediaires").permitAll()
+                .antMatchers("/hello").hasAnyRole("ADMIN","INTER")
+                .and()
+                .sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         httpSecurity.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
 
